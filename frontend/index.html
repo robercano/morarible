@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morarible</title>
+</head>
+
+<body>
+    <div>
+        <button id="btnConnect">Connect wallet</button>
+        <button id="btnLogout">Log out</button>
+        <button id="btnUserInfo">Profile</button>
+    </div>
+
+    <div id="userInfo">
+        <h4>User Profile</h4>
+        <input type="text" id="txtUsername" required placeholder="Enter username">
+        <input type="text" id="txtEmail" placeholder="Enter email">
+        <small>Optional</small>
+
+        <img width="50" height="50" src="" id="imgAvatar" alt="">
+        <label for="fileAvatar">Select avatar</label>
+        <input type="file" id="fileAvatar">
+
+        <button id="btnCloseUserInfo">Close</button>
+        <button id="btnSaveUserInfo">Save</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
