@@ -2,6 +2,9 @@ Moralis.initialize("es0nDUuv5bbNckxnHKny54QC4fkJIEJlrFEiP6IW");
 Moralis.serverURL = "https://pqfia64esyhg.moralis.io:2053/server";
 
 init = async () => {
+    closeUserInfo();
+    closeCreateItem();
+
     window.web3 = Moralis.Web3.enable();
 
     initUser();
@@ -14,11 +17,12 @@ initUser = async () => {
         hideElement(userConnectButton);
         showElement(userLogoutButton);
         showElement(userProfileButton);
+        showElement(openCreateItemBtn);
     } else {
         showElement(userConnectButton);
         hideElement(userLogoutButton);
         hideElement(userProfileButton);
-        hideElement(userInfo);
+        hideElement(openCreateItemBtn);
     }
 };
 
@@ -82,6 +86,14 @@ saveUserInfo = async () => {
     openUserInfo();
 };
 
+openCreateItem = async () => {
+    showElement(createItemForm);
+};
+
+closeCreateItem = async () => {
+    hideElement(createItemForm);
+};
+
 hideElement = (element) => (element.style.display = "none");
 showElement = (element) => (element.style.display = "block");
 
@@ -105,5 +117,13 @@ const userNameField = document.getElementById("txtUsername");
 const userEmailField = document.getElementById("txtEmail");
 const userAvatarImage = document.getElementById("imgAvatar");
 const userAvatarFile = document.getElementById("fileAvatar");
+
+const createItemForm = document.getElementById("createItem");
+
+const openCreateItemBtn = document.getElementById("btnOpenCreateItem");
+openCreateItemBtn.onclick = openCreateItem;
+
+const closeCreateItemBtn = document.getElementById("btnCloseCreateItem");
+closeCreateItemBtn.onclick = closeCreateItem;
 
 init();
